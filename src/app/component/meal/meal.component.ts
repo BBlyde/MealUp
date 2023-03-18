@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Meal } from 'src/app/models/meal.model';
+import { MealService } from '../services/meal.service';
 
 @Component({
   selector: 'app-meal',
@@ -12,16 +13,18 @@ export class MealComponent implements OnInit{
 
   buttonText!: string;
 
+  constructor(private mealService: MealService) {}
+
   ngOnInit(){
     this.buttonText = "➕";
   }
 
   onAddVouch() {
     if (this.buttonText === '➕') {
-      this.meal.vouch++;
+      this.mealService.vouchMealById(this.meal.id, 'vouch');
       this.buttonText = '✖️';
     } else {
-      this.meal.vouch--;
+      this.mealService.vouchMealById(this.meal.id, 'unvouch');
       this.buttonText = '➕'
     }
   }
