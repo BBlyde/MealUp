@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Meal } from 'src/app/models/meal.model';
-import { MealService } from '../services/meal.service';
+import { MealService } from '../../services/meal.service';
 
 @Component({
   selector: 'app-meal-list',
