@@ -16,7 +16,7 @@ export class MealListComponent implements OnInit{
 
   constructor(private mealService: MealService, private router: Router, private authService: AuthService) {
     //this.meals = this.mealService.getAllMeals();
-    this.mealService.getAllMeals().subscribe({
+    this.mealService.getMeals().subscribe({
       next: (meals: Meal[]) => this.meals = meals,
       error: (err: any) => {
         if (err instanceof HttpErrorResponse) {

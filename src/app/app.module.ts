@@ -39,11 +39,7 @@ import { AddMealComponent } from './component/add-meal/add-meal.component';
     useClass: TokenInterceptorService,
     multi: true
   }],*/
-  providers: [AuthService, MealService, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true
-  }],
+  providers: [AuthService, MealService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
