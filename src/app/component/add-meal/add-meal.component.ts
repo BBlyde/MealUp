@@ -13,7 +13,7 @@ export class AddMealComponent {
 
   constructor(private formBuilder: FormBuilder) {
     this.myForm = this.formBuilder.group({
-      title: [''],
+      meal: [''],
       description: [''],
       imageUrl: ['']
     });

@@ -25,7 +25,7 @@ export class MealService {
     }
   ];
 
-  private apiUrl = "api/v1/notes";
+  private apiUrl = "api/v1/meals";
 
   constructor(private http: HttpClient){
 
