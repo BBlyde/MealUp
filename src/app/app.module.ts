@@ -1,5 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +11,10 @@ import { MealListComponent } from './component/meal-list/meal-list.component';
 import { HeaderComponent } from './component/header/header.component';
 import { LoginComponent } from './component/login/login.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthService } from './services/auth.service';
+import { MealService } from './services/meal.service';
+import { TokenInterceptorService } from './services/token-interceptor.service';
+
 
 @NgModule({
   declarations: [
@@ -23,9 +29,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [AuthService, MealService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
