@@ -1,1 +1,2 @@
 <app-meal *ngFor="let meal of meals" [meal]="meal"></app-meal>
+<app-add-meal (onAddUpdateMeal)="addMeal($event)"></app-add-meal>

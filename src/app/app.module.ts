@@ -14,6 +14,7 @@ import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { AuthService } from './services/auth.service';
 import { MealService } from './services/meal.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
+import { AddMealComponent } from './component/add-meal/add-meal.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     HeaderComponent,
     LoginComponent,
     SignUpComponent,
+    AddMealComponent,
   ],
   imports: [
     BrowserModule,
@@ -32,6 +34,11 @@ import { TokenInterceptorService } from './services/token-interceptor.service';
     ReactiveFormsModule,
     HttpClientModule
   ],
+  /*providers: [AuthService, MealService, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],*/
   providers: [AuthService, MealService, {
     provide: HTTP_INTERCEPTORS,
     useClass: TokenInterceptorService,

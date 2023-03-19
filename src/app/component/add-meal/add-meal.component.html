@@ -1,0 +1,16 @@
+<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+    <label>
+      Meal :
+      <input type="text" formControlName="meal" required="true">
+    </label>
+    <label>
+      Description :
+      <input type="text" formControlName="description" required="true">
+    </label>
+    <label>
+        Image Url :
+        <input type="text" formControlName="imageUrl" required="true">
+      </label>
+    <button type="submit">Submit</button>
+</form>
+  

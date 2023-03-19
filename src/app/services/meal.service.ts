@@ -4,7 +4,7 @@ import { catchError, Observable, throwError } from 'rxjs';
 import { Meal } from 'src/app/models/meal.model';
 
 const httpOptions = {
-  Headers: new HttpHeaders({
+  headers: new HttpHeaders({
     'Content-type' : 'application/json'
   })
 }
