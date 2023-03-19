@@ -43,7 +43,7 @@ export class MealService {
     return throwError(() => errorMessage);
   }
 
-  // add new note
+  // add new meal
   addMeal(meal: Meal): Observable<Meal> {
     return this.http.post<Meal>(this.apiUrl, meal, httpOptions).pipe(catchError(this.handleError));
   }
@@ -53,6 +53,17 @@ export class MealService {
     return this.http.get<Meal []>(this.apiUrl).pipe(catchError(this.handleError));
   }
 
+  // update existing meal
+  updateMeal(id: any, data: any): Observable<Meal>{
+    let url = `${this.apiUrl}/${id}`;
+    return this.http.put<Meal>(url, data, httpOptions).pipe(catchError(this.handleError));
+  };
+
+  // delete existing meal
+  deleteMeal(id: any): Observable<Meal>{
+    let url = `${this.apiUrl}/${id}`;
+    return this.http.delete<Meal>(url, httpOptions).pipe(catchError(this.handleError));
+  }
   /* OC PART */
 
   getAllMeals(): Meal[] {

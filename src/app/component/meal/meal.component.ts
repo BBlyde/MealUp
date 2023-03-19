@@ -25,7 +25,7 @@ export class MealComponent implements OnInit{
       this.buttonText = '✖️';
     } else {
       this.mealService.vouchMealById(this.meal.id, 'unvouch');
-      this.buttonText = '➕'
+      this.buttonText = '➕';
     }
   }
 }
