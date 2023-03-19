@@ -1,7 +1,44 @@
 <header>
     <nav>
         <a routerLink="meals" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">MealUp</a>
-        <a routerLink="login" routerLinkActive="active">Login</a>
-        <a routerLink="sign-up" routerLinkActive="active">Sign-up</a>
-      </nav>
+        <!-- Login-->
+                <!-- #TODO: Write a condition to check if the login button should be displayed-->
+                <button
+                    *ngIf="!authService.getToken()"
+                    mat-raised-button
+                    routerLinkActive="active"
+                    routerLink="/login">
+                    Login
+                </button>
+
+                 <!-- Signup -->
+                 <!-- #TODO: Write a condition to check if the signup button should be displayed-->
+        <!-- Reset password-->
+        <button
+                    *ngIf="!authService.getToken()"
+                    mat-raised-button
+                    routerLinkActive="accent"
+                    routerLink="/sign-up"
+                    color="accent">
+                    Sign up
+                </button>
+        <button
+          *ngIf="authService.getToken()"
+          mat-raised-button 
+          color="accent"
+          routerLinkActive="active"
+          routerLink="/reset-password">
+          Reset password
+        </button>
+
+        <!-- Log out-->
+        <button
+            *ngIf="authService.getToken()"
+            mat-raised-button 
+            color="accent"
+            (click)="authService.logOut()"
+            routerLinkActive="active">
+            Log out
+        </button>
+    </nav>
 </header>

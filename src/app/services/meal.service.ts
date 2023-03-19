@@ -14,7 +14,7 @@ const httpOptions = {
 })
 export class MealService {
 
-  meals: Meal[] = [
+  meals: Meal[] = [/*
     {   
         id: 1,
         title : 'Meal 1',
@@ -22,7 +22,7 @@ export class MealService {
         imageUrl : 'https://static.onecms.io/wp-content/uploads/sites/44/2019/08/26231113/5783153.jpg',
         createdDate : new Date(),
         vouch: 0
-    }
+    }*/
   ];
 
   private apiUrl = "api/v1/meals";

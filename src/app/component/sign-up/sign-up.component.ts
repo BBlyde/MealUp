@@ -24,7 +24,32 @@ export class SignUpComponent {
       
   }
 
-  signUp(): void {
-    const loginCredentials = this.signUpForm.value;
-  }
+  signup(): void {
+    const signupCredentials = this.signUpForm.value;
+    //console.log(`[INFO] Signup credentials: ${JSON.stringify(signupCredentials)}`);
+
+    const email = signupCredentials.email;
+    const password = signupCredentials.password;
+    const confirmPassword = signupCredentials.confirmPassword;
+
+    if(email){
+
+      if(password === confirmPassword){
+
+        this.authService.signUp(email, password)
+                        .subscribe((value) => {
+                            // TODO: explain this section later
+                            localStorage.setItem("token", value["token"]);
+                            this.router.navigateByUrl("/meals");
+                        });
+
+      }else{
+        alert("Password doesn't match");
+      }
+
+    }else{
+      alert("Please add an email address");
+    }
+
+}
 }

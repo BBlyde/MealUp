@@ -19,15 +19,13 @@ export class AuthService {
     return this.http.post<any>("api/v1/login", {email, password});
   }
 
-  loggedIn(){
-
-  }
-
-  loggedOut(){
-
-  }
-
+  // check if token is available
   getToken(){
-    
+    return localStorage.getItem("token");
+  }
+
+  logOut(){
+     localStorage.removeItem("token");
+     this.router.navigateByUrl("/login");
   }
 }

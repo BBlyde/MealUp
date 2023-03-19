@@ -25,7 +25,7 @@ export class LoginComponent implements OnInit{
 
   login(): void {
     const loginCredentials = this.loginForm.value;
-    /*const email = loginCredentials.email;
+    const email = loginCredentials.email;
     const password = loginCredentials.password;
 
     if(email && password){
@@ -34,11 +34,11 @@ export class LoginComponent implements OnInit{
 
         // TODO: Grab the token generated from the server
         localStorage.setItem('token', value["token"]);
-        this.router.navigateByUrl("/notes");
+        this.router.navigateByUrl("/meals");
       });
       
     }else{
       alert("Missing Email or Password");
-    }*/
+    }
   }
 }
