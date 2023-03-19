@@ -4,9 +4,10 @@ import { LoginComponent } from './component/login/login.component';
 import { MealListComponent } from './component/meal-list/meal-list.component';
 import { SignUpComponent } from './component/sign-up/sign-up.component';
 import { Meal } from './models/meal.model';
+import { AuthGuard } from './services/auth.guard';
 
 const routes: Routes = [
-  { path : 'meals', component: MealListComponent },
+  { path : 'meals', component: MealListComponent, canActivate: [AuthGuard]},
   { path: 'login', component: LoginComponent },
   { path: 'sign-up', component: SignUpComponent },
   { path: '**', component: MealListComponent}

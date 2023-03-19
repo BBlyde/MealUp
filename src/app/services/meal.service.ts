@@ -25,7 +25,7 @@ export class MealService {
     }*/
   ];
 
-  private apiUrl = "api/v1/meals";
+  private apiUrl = "https://localhost:13000/api/v1/meals";
 
   constructor(private http: HttpClient){
 
@@ -70,7 +70,7 @@ export class MealService {
     return this.meals;
   }
 
-  getMealById(mealId: number): Meal{
+  getMealById(mealId: string): Meal{
     const meal = this.meals.find(meal => meal.id === mealId);
     if (!meal) {
       throw new Error("Meal not found");
@@ -79,7 +79,7 @@ export class MealService {
     }
   }
 
-  vouchMealById(mealId: number, mealType: 'vouch' | 'unvouch'): void {
+  vouchMealById(mealId: string, mealType: 'vouch' | 'unvouch'): void {
     const meal = this.getMealById(mealId);
     mealType === 'vouch' ? meal.vouch++ : meal.vouch--;
   }

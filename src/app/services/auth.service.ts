@@ -7,16 +7,18 @@ import { Router } from '@angular/router';
 })
 export class AuthService {
 
+  private apiUrl = "https://localhost:13000/api/v1";
+
   constructor(private http: HttpClient, private router: Router) {}
 
   // create a new user
   signUp(email: string, password: string){
-    return this.http.post<any>("api/v1/sign-up", {email, password});
+    return this.http.post<any>(`${this.apiUrl}/sign-up`, {email, password});
   }
 
   // verify an existing user
   login(email: string, password: string){
-    return this.http.post<any>("api/v1/login", {email, password});
+    return this.http.post<any>(`${this.apiUrl}/login`, {email, password});
   }
 
   // check if token is available
