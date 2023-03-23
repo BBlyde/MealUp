@@ -1,1 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@600&family=Prompt:wght@500&family=Roboto:wght@100&display=swap');
+
+body{
+    margin : 0;
+    font-family: 'Golos Text', sans-serif;
+    text-align: center;
+    color : #CE4257;
+}

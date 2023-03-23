@@ -1,36 +1,14 @@
-<h1 class="class-header">Login</h1>
-    <div class="class-body">
-        <form [formGroup]="loginForm"
-              autocomplete="off"
-              novalidate
-              (ngSubmit)="login()">
-            
-              <!-- Email address -->
-            <input
-                class="form-control"
-                type="text"
-                ngDefaultControl
-                formControlName="email"
-                required
-                placeholder="Email Address"
-                minlength="5">
+<div class="form-card">
+    <span class="form-title">Login</span>
 
-            <!-- Password -->
-                <input
-                class="form-control"
-                type="password"
-                ngDefaultControl
-                formControlName="password"
-                required
-                placeholder="Password"
-                minlength="5">
+    <form [formGroup]="loginForm" autocomplete="off" novalidate (ngSubmit)="login()" class="form-column" >
+            <!-- Email address -->
+        <input class="form-control form-field" type="text" ngDefaultControl formControlName="email" required placeholder="Email Address" minlength="5">
 
-            <!-- Button -->
-            <button
-                color="warn"
-                type="submit"
-            >
-            Login
-            </button>
-        </form>
-    </div>
+        <!-- Password -->
+        <input class="form-control form-field" type="password" ngDefaultControl formControlName="password" required placeholder="Password" minlength="5">
+
+        <!-- Button -->
+        <button type="submit">Login</button>
+    </form>
+</div>

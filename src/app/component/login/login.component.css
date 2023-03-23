@@ -1,0 +1,75 @@
+.form-card {
+    box-sizing: border-box;
+    width: 50%;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    box-shadow: lightgray 4px 4px 20px;
+    border : lightgray 1px solid;
+}
+
+.form-title{
+    font-size: 30px;
+}
+
+.form-column{
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+  }
+  
+  .form-field label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+  
+  .form-field input[type="text"],
+  .form-field input[type="email"],
+  .form-field input[type="password"],
+  .form-field textarea {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    line-height: 1.5;
+    resize: none;
+  }
+  
+  .form-field input[type="text"]:focus,
+  .form-field input[type="email"]:focus,
+  .form-field input[type="password"]:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: #4CAF50;
+  }
+
+  .button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .button:hover {
+    background-color: #ccc;
+    color: #fff;
+  }
+  
