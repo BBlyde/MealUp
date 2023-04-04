@@ -1,4 +1,4 @@
-<form [formGroup]="myForm" (ngSubmit)="onSubmit()">
+<form [formGroup]="mealForm" novalidate (ngSubmit)="onSubmit()">
     <label>
       Meal :
       <input type="text" formControlName="meal" required="true">
@@ -8,9 +8,9 @@
       <input type="text" formControlName="description" required="true">
     </label>
     <label>
-        Image Url :
-        <input type="text" formControlName="imageUrl" required="true">
-      </label>
+      Image Url :
+      <input type="text" formControlName="imageUrl" required="true">
+    </label>
     <button type="submit">Submit</button>
 </form>
   

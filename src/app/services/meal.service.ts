@@ -45,6 +45,7 @@ export class MealService {
 
   // add new meal
   addMeal(meal: Meal): Observable<Meal> {
+    console.log(meal);
     return this.http.post<Meal>(this.apiUrl, meal, httpOptions).pipe(catchError(this.handleError));
   }
 

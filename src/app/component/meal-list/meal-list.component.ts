@@ -73,7 +73,7 @@ export class MealListComponent implements OnInit{
       this.mealService.addMeal(meal).subscribe((meal: Meal) => (this.meals.push(meal)));
     }
     
-    this.refreshPage();
+    //this.refreshPage();
   }
 
   refreshPage() {
