@@ -28,4 +28,8 @@ export class MealComponent implements OnInit{
       this.buttonText = '➕';
     }
   }
+
+  onDeleteMeal(){
+    
+  }
 }

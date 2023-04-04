@@ -60,13 +60,13 @@ export class MealListComponent implements OnInit{
     if(canEditMeal){    // edit an existing meal
       const data = {
         meal: meal.title,
-        description: meal.description
+        text: meal.text
       }
       this.mealService.updateMeal(mealId, data)
                       .subscribe(() => {
                         let index = this.meals.findIndex( item => item["id"] == meal.id);
                         this.meals[index].title = meal.title;
-                        this.meals[index].description = meal.description;
+                        this.meals[index].text = meal.text;
                         //console.log("Record updated!"); // remove prints in production
                       });
     }else{    // add a new meal

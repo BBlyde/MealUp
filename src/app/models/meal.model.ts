@@ -1,8 +1,7 @@
 export interface Meal {
     id: string;
     title: string;
-    description: string;
-    createdDate: Date;
+    text: string;
     vouch: number;
     imageUrl: string;
 }

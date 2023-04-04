@@ -5,6 +5,10 @@
     padding: 10px 30px;
     box-shadow: lightgray 4px 4px 20px;
     border : lightgray 1px solid;
+    display: flex;
+    flex-direction: column;
+    align-content: flex-start;
+    text-align: justify;
 }
 
 img {
@@ -19,9 +23,10 @@ h2 {
 p {
     font-weight: 300;
     font-size: 16px;
+    color: #111010;
 }
 
-button {
+.vouch-button {
     background-color: transparent;
     box-sizing: border-box;
     padding: 5px 10px;
@@ -36,4 +41,16 @@ button {
 .vouched {
     border: solid 1px;
     border-color: green;
+}
+
+.bottom-meal-card{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.delete-button{
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
 }

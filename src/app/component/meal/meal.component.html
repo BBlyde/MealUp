@@ -1,10 +1,12 @@
 <div class="meal-card" [class]="{ vouched:  buttonText === '✖️' }">
     <h2>{{ meal.title | uppercase }}</h2>
-    <p>Mis en ligne le {{ meal.createdDate | date: 'MM/dd/yy HH:mm' }}</p>
     <img [src]="meal.imageUrl" [alt]="meal.title">
-    <p>{{ meal.description }}</p>
-    <p>
-        <button (click)="onAddVouch()">{{ buttonText }}</button>
-        <span [ngStyle]="{ color: 'rgb(0, ' + meal.vouch * 10 + ', 0)' }"> {{ meal.vouch }}</span>
-    </p>
+    <p>{{ meal.text }}</p>
+    <div class="bottom-meal-card">
+        <p>
+            <button (click)="onAddVouch()" class="vouch-button">{{ buttonText }}</button>
+            <span [ngStyle]="{ color: 'rgb(0, ' + meal.vouch * 10 + ', 0)' }"> {{ meal.vouch }}</span>
+        </p>
+        <button (click)="onDeleteMeal()" class="delete-button">Delete</button>
+    </div>
 </div>

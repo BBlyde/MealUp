@@ -26,11 +26,5 @@ export class AddMealComponent {
 
   onSubmit(): void {
     this.onAddUpdateMeal.emit(this.mealForm.value);
-    console.log(this.mealForm.value);
-
-    this.mealService.addMeal(this.mealForm.value)
-      .subscribe((value) => {
-        //this.router.navigateByUrl("/meals");
-      });
   }
 }
