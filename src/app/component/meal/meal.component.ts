@@ -19,17 +19,37 @@ export class MealComponent implements OnInit{
     this.buttonText = "➕";
   }
 
-  onAddVouch() {
+  addVouch(meal: Meal) {
     if (this.buttonText === '➕') {
-      this.mealService.vouchMealById(this.meal.id, 'vouch');
+
+      const data = {
+        _id: meal._id,
+        title: meal.title,
+        text: meal.text,
+        vouch: meal.vouch++,
+        imageUrl: meal.imageUrl      
+      }
       this.buttonText = '✖️';
+      this.mealService.updateMeal(meal._id, data).subscribe(()=>{});
+
     } else {
-      this.mealService.vouchMealById(this.meal.id, 'unvouch');
+
+      const data = {
+        _id: meal._id,
+        title: meal.title,
+        text: meal.text,
+        vouch: meal.vouch--,
+        imageUrl: meal.imageUrl      
+      }  
       this.buttonText = '➕';
+      this.mealService.updateMeal(meal._id, data).subscribe(()=>{});
     }
   }
 
-  onDeleteMeal(){
-    
+  deleteMeal(meal: Meal){
+    const mealId = meal["_id"]; // retreive the unique id for the note
+    //const index: number = this.meal.indexOf(meal); // get the index of the note
+
+    this.mealService.deleteMeal(mealId).subscribe(() => {});
   }
 }

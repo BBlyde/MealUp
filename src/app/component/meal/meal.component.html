@@ -4,9 +4,9 @@
     <p>{{ meal.text }}</p>
     <div class="bottom-meal-card">
         <p>
-            <button (click)="onAddVouch()" class="vouch-button">{{ buttonText }}</button>
+            <button (click)="addVouch(meal)" class="vouch-button">{{ buttonText }}</button>
             <span [ngStyle]="{ color: 'rgb(0, ' + meal.vouch * 10 + ', 0)' }"> {{ meal.vouch }}</span>
         </p>
-        <button (click)="onDeleteMeal()" class="delete-button">Delete</button>
+        <button (click)="deleteMeal(meal)" class="delete-button">Delete</button>
     </div>
 </div>

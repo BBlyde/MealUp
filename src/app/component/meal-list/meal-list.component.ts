@@ -48,13 +48,13 @@ export class MealListComponent implements OnInit{
   }*/
 
   deleteMeal(meal: Meal){
-    const mealId = meal["id"];
+    const mealId = meal["_id"];
     const index: number = this.meals.indexOf(meal);
     this.mealService.deleteMeal(mealId).subscribe(() => this.meals.splice(index, 1));
   }
 
   addMeal(meal: Meal){
-    const mealId = meal["id"];
+    const mealId = meal["_id"];
     const canEditMeal = mealId ? true : false;
 
     if(canEditMeal){    // edit an existing meal
@@ -64,7 +64,7 @@ export class MealListComponent implements OnInit{
       }
       this.mealService.updateMeal(mealId, data)
                       .subscribe(() => {
-                        let index = this.meals.findIndex( item => item["id"] == meal.id);
+                        let index = this.meals.findIndex( item => item["_id"] == meal._id);
                         this.meals[index].title = meal.title;
                         this.meals[index].text = meal.text;
                         //console.log("Record updated!"); // remove prints in production
