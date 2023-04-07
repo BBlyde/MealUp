@@ -27,17 +27,20 @@ export class MealComponent implements OnInit{
   }
 
   addVouch(meal: Meal) {
+    const mealId = meal["_id"];
+
     if (this.buttonText === '➕') {
 
       const data = {
         _id: meal._id,
         title: meal.title,
         text: meal.text,
-        vouch: meal.vouch++,
+        vouch: meal.vouch+1,
         imageUrl: meal.imageUrl      
       }
+      console.log(data);
       this.buttonText = '✖️';
-      this.mealService.updateMeal(meal._id, data).subscribe(()=>{});
+      this.mealService.updateMeal(mealId, data).subscribe(()=>{});
 
     } else {
 
@@ -45,11 +48,11 @@ export class MealComponent implements OnInit{
         _id: meal._id,
         title: meal.title,
         text: meal.text,
-        vouch: meal.vouch--,
+        vouch: meal.vouch-1,
         imageUrl: meal.imageUrl      
       }  
       this.buttonText = '➕';
-      this.mealService.updateMeal(meal._id, data).subscribe(()=>{});
+      this.mealService.updateMeal(mealId, data).subscribe(()=>{});
     }
   }
 
