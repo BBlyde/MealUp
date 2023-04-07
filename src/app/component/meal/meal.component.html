@@ -1,12 +1,17 @@
 <div class="meal-card" [class]="{ vouched:  buttonText === '✖️' }">
     <h2>{{ meal.title | uppercase }}</h2>
     <img [src]="meal.imageUrl" [alt]="meal.title">
-    <p>{{ meal.text }}</p>
-    <div class="bottom-meal-card">
+    <form [formGroup]="mealForm" novalidate class="flex-meal-card flex-form">
+        <textarea formControlName="description" required="true" placeholder="{{ meal.text }}"></textarea>
+        <button (click)="editMeal(meal)" class="edit-button">Edit</button>
+    </form>
+    <div class="flex-meal-card">
         <p>
             <button (click)="addVouch(meal)" class="vouch-button">{{ buttonText }}</button>
             <span [ngStyle]="{ color: 'rgb(0, ' + meal.vouch * 10 + ', 0)' }"> {{ meal.vouch }}</span>
         </p>
-        <button (click)="deleteMeal(meal)" class="delete-button">Delete</button>
+        <div class="right-side">
+            <button (click)="deleteMeal(meal)" class="right-button">Delete</button>
+        </div>
     </div>
 </div>

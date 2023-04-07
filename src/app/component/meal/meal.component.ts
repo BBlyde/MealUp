@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Meal } from 'src/app/models/meal.model';
 import { MealService } from '../../services/meal.service';
 
@@ -13,7 +14,13 @@ export class MealComponent implements OnInit{
 
   buttonText!: string;
 
-  constructor(private mealService: MealService) {}
+  mealForm: FormGroup;
+
+  constructor(private formBuilder: FormBuilder, private mealService: MealService) {
+    this.mealForm = this.formBuilder.group({
+      description: ['']
+    });
+  }
 
   ngOnInit(){
     this.buttonText = "➕";
@@ -51,5 +58,19 @@ export class MealComponent implements OnInit{
     //const index: number = this.meal.indexOf(meal); // get the index of the note
 
     this.mealService.deleteMeal(mealId).subscribe(() => {});
+  }
+
+  editMeal(meal: Meal){
+    const mealId = meal["_id"];
+
+    const data = {
+      _id: meal._id,
+      title: meal.title,
+      text: this.mealForm.value.description,
+      vouch: meal.vouch,
+      imageUrl: meal.imageUrl
+    }
+
+    this.mealService.updateMeal(mealId, data).subscribe(() => {});
   }
 }
