@@ -50,6 +50,5 @@ export class SignUpComponent {
     }else{
       alert("Please add an email address");
     }
-
-}
+  }
 }
