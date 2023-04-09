@@ -30,4 +30,10 @@ export class AuthService {
      localStorage.removeItem("token");
      this.router.navigateByUrl("/login");
   }
+
+
+  // reset password
+  resetPassword(password: string){
+    return this.http.post<any>(`${this.apiUrl}/reset-password`, {password});
+  }
 }

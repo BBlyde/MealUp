@@ -15,6 +15,7 @@ import { AuthService } from './services/auth.service';
 import { MealService } from './services/meal.service';
 import { TokenInterceptorService } from './services/token-interceptor.service';
 import { AddMealComponent } from './component/add-meal/add-meal.component';
+import { ResetPasswordComponent } from './component/reset-password/reset-password.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { AddMealComponent } from './component/add-meal/add-meal.component';
     LoginComponent,
     SignUpComponent,
     AddMealComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,
