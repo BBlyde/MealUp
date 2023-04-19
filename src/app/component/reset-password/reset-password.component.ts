@@ -30,12 +30,10 @@ export class ResetPasswordComponent {
     const confirmPassword = signupCredentials.confirmPassword;
 
     if(password === confirmPassword){
-
       this.authService.resetPassword(password).subscribe((value) => {
-                        localStorage.setItem("token", value["token"]);
-                        this.router.navigateByUrl("/meals");
-                      });
-
+        localStorage.setItem("token", value["token"]);
+        this.router.navigateByUrl("/meals");
+      });
     }else{
       alert("Password doesn't match");
     }
