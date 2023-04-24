@@ -73,7 +73,7 @@ textarea{
     border-style: none;
     border-bottom: 1px solid black;
     width: 90%;
-    height: 75px;
+    height: 100px;
     font-size: 16px;
     margin-top: 20px;
 }
@@ -81,4 +81,8 @@ textarea{
 ::placeholder{
     opacity: 1;
     color: #CE4257;
+}
+
+.hidden{
+    display: none;
 }

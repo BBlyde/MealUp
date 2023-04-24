@@ -4,4 +4,6 @@ export interface Meal {
     text: string;
     vouch: number;
     imageUrl: string;
+    vouchedBy: Array<string>;
+    owner: string;
 }

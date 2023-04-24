@@ -31,7 +31,6 @@ export class AuthService {
      this.router.navigateByUrl("/login");
   }
 
-
   // reset password
   resetPassword(password: string){
     return this.http.post<any>(`${this.apiUrl}/reset-password`, {password});

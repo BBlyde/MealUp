@@ -3,15 +3,15 @@
     <img [src]="meal.imageUrl" [alt]="meal.title">
     <form [formGroup]="mealForm" novalidate class="flex-meal-card flex-form">
         <textarea formControlName="description" required="true" placeholder="{{ meal.text }}"></textarea>
-        <button (click)="editMeal(meal)" class="edit-button">Edit</button>
+        <button (click)="editMeal(meal)" [class]="{ hidden: !this.isOwner, 'edit-button': true }">Edit</button>
     </form>
     <div class="flex-meal-card">
         <p>
             <button (click)="addVouch(meal)" class="vouch-button">{{ buttonText }}</button>
-            <span [ngStyle]="{ color: 'rgb(0, ' + meal.vouch * 10 + ', 0)' }"> {{ meal.vouch }}</span>
+            <span> {{ meal.vouch }}</span>
         </p>
         <div class="right-side">
-            <button (click)="deleteMeal(meal)" class="right-button">Delete</button>
+            <button (click)="deleteMeal(meal)" [class]="{ hidden: !this.isOwner, 'right-button': true }">Delete</button>
         </div>
     </div>
 </div>

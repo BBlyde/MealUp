@@ -34,25 +34,6 @@ export class MealListComponent implements OnInit{
     
   }
 
-  /*editMeal(meal: Meal) {
-    //console.log("[INFO] You clicked, editing meal now");
-
-    // send data from the note component into the add-note component
-    this.mealForm.setValue({
-      id: note["id"],
-      title: note["title"],
-      text: note["text"]
-    })
-    
-    this.uiService.toggleEditNoteData(this.noteForm.value);
-  }*/
-
-  deleteMeal(meal: Meal){
-    const mealId = meal["_id"];
-    const index: number = this.meals.indexOf(meal);
-    this.mealService.deleteMeal(mealId).subscribe(() => this.meals.splice(index, 1));
-  }
-
   addMeal(meal: Meal){
     const mealId = meal["_id"];
     const canEditMeal = mealId ? true : false;
@@ -67,17 +48,11 @@ export class MealListComponent implements OnInit{
                         let index = this.meals.findIndex( item => item["_id"] == meal._id);
                         this.meals[index].title = meal.title;
                         this.meals[index].text = meal.text;
-                        //console.log("Record updated!"); // remove prints in production
                       });
     }else{    // add a new meal
       this.mealService.addMeal(meal).subscribe((meal: Meal) => (this.meals.push(meal)));
     }
     
-    //this.refreshPage();
-  }
-
-  refreshPage() {
-    this.location.replaceState(this.location.path());
     window.location.reload();
   }
 }

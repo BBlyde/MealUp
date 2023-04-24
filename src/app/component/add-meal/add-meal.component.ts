@@ -26,5 +26,6 @@ export class AddMealComponent {
 
   onSubmit(): void {
     this.onAddUpdateMeal.emit(this.mealForm.value);
+    window.location.reload();
   }
 }
