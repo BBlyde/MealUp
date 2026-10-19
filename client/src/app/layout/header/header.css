@@ -1,0 +1,138 @@
+:host {
+	display: block;
+}
+
+.site-header {
+	background: #fff;
+	border-bottom: 1px solid #eee8ef;
+}
+
+.header-inner {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	max-width: 1200px;
+	min-height: 76px;
+	margin: 0 auto;
+	padding: 0 32px;
+}
+
+.brand {
+	display: inline-flex;
+	align-items: center;
+	gap: 11px;
+	color: #302b34;
+	text-decoration: none;
+}
+
+.brand-mark {
+	position: relative;
+	display: grid;
+	width: 38px;
+	height: 38px;
+	place-items: center;
+	border-radius: 11px;
+	background: #df4357;
+	color: #fff;
+	font-family: "Trebuchet MS", sans-serif;
+	font-size: 25px;
+	font-weight: 800;
+	line-height: 1;
+}
+
+.brand-mark::after {
+	position: absolute;
+	top: -3px;
+	right: -3px;
+	width: 9px;
+	height: 9px;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	background: #7545a3;
+	content: "";
+}
+
+.brand-name {
+	font-family: "Trebuchet MS", sans-serif;
+	font-size: 21px;
+	font-weight: 800;
+}
+
+.brand-name span {
+	color: #7545a3;
+}
+
+.main-nav {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: flex;
+	transform: translate(-50%, -50%);
+}
+
+.nav-link {
+	display: inline-flex;
+	align-items: center;
+	min-height: 42px;
+	padding: 0 17px;
+	border: 1px solid #eadfed;
+	border-radius: 999px;
+	background: #fbf8fc;
+	color: #693c91;
+	font-size: 15px;
+	font-weight: 650;
+	text-decoration: none;
+	transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+}
+
+.nav-link.is-active {
+	border-color: #ddc9e9;
+	background: #f5eff8;
+	color: #693c91;
+}
+
+.nav-link:hover {
+	border-color: #d8bce7;
+	background: #f2e8f7;
+}
+
+.brand:focus-visible,
+.nav-link:focus-visible {
+	border-radius: 999px;
+	outline: 2px solid #7545a3;
+	outline-offset: 4px;
+}
+
+@media (max-width: 520px) {
+	.header-inner {
+		min-height: 68px;
+		padding: 0 18px;
+	}
+
+	.brand {
+		gap: 9px;
+	}
+
+	.brand-mark {
+		width: 34px;
+		height: 34px;
+	}
+
+	.brand-name {
+		font-size: 19px;
+	}
+
+	.nav-link {
+		min-height: 40px;
+		padding: 0 13px;
+		font-size: 14px;
+	}
+}
+
+
+@media (max-width: 380px) {
+	.brand-name {
+		display: none;
+	}
+}

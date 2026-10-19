@@ -1,0 +1,14 @@
+# Angular build and dependency output
+front/node_modules/
+front/dist/
+front/.angular/
+front/coverage/
+
+# Spring Boot build output
+back/target/
+
+# Local credentials
+.env
+**/.env
+**/.env.*
+!**/.env.example
