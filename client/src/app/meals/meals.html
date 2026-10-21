@@ -20,18 +20,34 @@
     <label for="mealCookingTime">Temps de cuisson</label>
     <input type="number" id="mealCookingTime" [formField]="mealForm.cooking" />
 
-    <button type="submit">Ajouter</button>
+    <button type="submit" [disabled]="isSaving()">
+        {{ isSaving() ? 'Enregistrement…' : 'Ajouter' }}
+    </button>
+
+    @if (saveError()) {
+    <p role="alert">{{ saveError() }}</p>
+    }
 </form>
 
-<ul>
+@if (loadError()) {
+<p role="alert">{{ loadError() }}</p>
+}
+
+@if (isLoading()) {
+<p>Chargement des repas…</p>
+} @else {
+<div class="meal-container">
     @for (meal of meals(); track $index) {
-    <li>
-        <h3>{{ meal.name }}</h3>
-        <p>Ingrédients : {{ meal.ingredients }}</p>
-        <p>Recette : {{ meal.recipe }}</p>
-        <p>Type : {{ meal.type }}</p>
-        <p>Temps de préparation : {{ meal.preparation }}</p>
-        <p>Temps de cuisson : {{ meal.cooking }}</p>
-    </li>
+    <div class="meal-item">
+        <div class="meal-item__first_row">
+            <div class="meal-name">{{ meal.name | titlecase }}</div>
+            <div class="meal-type">{{ meal.type }}</div>
+        </div>
+        <div class="meal-ingredients">{{ meal.ingredients }}</div>
+        <div class="meal-recipe">{{ meal.recipe }}</div>
+        <div class="meal-preparation">{{ meal.preparation }} min de préparation</div>
+        <div class="meal-cooking">{{ meal.cooking }} min de cuisson</div>
+    </div>
     }
-</ul>
+</div>
+}

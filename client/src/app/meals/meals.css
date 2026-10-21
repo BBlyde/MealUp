@@ -1,0 +1,23 @@
+.meal-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 16px;
+}
+
+.meal-item {
+    border: 1px solid #ccc;
+    padding: 16px;
+    border-radius: 8px;
+    width: 400px;
+}
+
+.meal-item__first_row {
+    display: flex;
+    justify-content: flex-start;
+    gap: 8px;
+}
+
+.meal-name {
+    font-weight: bold;
+}

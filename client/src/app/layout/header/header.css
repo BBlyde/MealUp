@@ -3,8 +3,10 @@
 }
 
 .site-header {
-	background: #fff;
-	border-bottom: 1px solid #eee8ef;
+	margin: 10px 50px;
+	border-radius: 20px;
+	border: 3px solid #A1232D;
+	background: #E09292;
 }
 
 .header-inner {
@@ -76,20 +78,20 @@
 	align-items: center;
 	min-height: 42px;
 	padding: 0 17px;
-	border: 1px solid #eadfed;
+	border: 3px solid #eadfed;
 	border-radius: 999px;
-	background: #fbf8fc;
+	background: #E09292;
 	color: #693c91;
 	font-size: 15px;
-	font-weight: 650;
 	text-decoration: none;
 	transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+	font-family: "Momo Trust Display", sans-serif;
 }
 
 .nav-link.is-active {
-	border-color: #ddc9e9;
-	background: #f5eff8;
-	color: #693c91;
+	border-color: #A1232D;
+	background: #ffa9a9;
+	color: #A1232D;
 }
 
 .nav-link:hover {
